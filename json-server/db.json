@@ -1,0 +1,15 @@
+{
+  "clients": [
+    {
+      "firstname": "Hassen",
+      "lastname": "Hichri",
+      "telnumber": "0781586158",
+      "address": {
+        "city": "Antibes",
+        "street": "84 Boulevard Raymond poincaré, Res. le Silvaplana",
+        "zipcode": "06160"
+      },
+      "id": 1
+    }
+  ]
+}

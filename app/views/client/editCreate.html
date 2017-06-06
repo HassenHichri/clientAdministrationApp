@@ -1,0 +1,54 @@
+<div class="alert alert-success" role="alert" ng-if="successMessage">
+    {{ successMessage }}
+</div>
+<form name="clientForm" ng-submit="saveClient()">
+    <div class="row">
+        <label for="firstname">Firstname:</label>
+        <input type="text" id="firstname" name="firstname" ng-model="client.firstname" required>
+        <div class="alert alert-danger" ng-show="clientForm.firstname.$touched&&clientForm.firstname.$error.required">
+            This field is required
+        </div>
+    </div>
+    <div class="row">
+        <label for="lastname">Lastname:</label>
+        <input type="text" id="lastname" name="lastname" ng-model="client.lastname" required>
+        <div class="alert alert-danger" ng-show="clientForm.lastname.$touched&&clientForm.lastname.$error.required">
+            This field is required
+        </div>
+    </div>
+    <div class="row">
+        <label for="telnumber">Telephone Number</label>
+        <input type="text" id="telnumber" name="telnumber" ng-model="client.telnumber" required>
+        <div class="alert alert-danger" ng-show="clientForm.telnumber.$touched&&clientForm.telnumber.$error.required">
+            This field is required
+        </div>
+    </div>
+    <div class="row">
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" ng-model="client.address.city" required>
+        <div class="alert alert-danger" ng-show="clientForm.city.$touched&&clientForm.city.$error.required">
+            This field is required
+        </div>
+    </div>
+    <div class="row">
+        <label for="street">Street</label>
+        <input type="text" id="street" name="street" ng-model="client.address.street" required>
+        <div class="alert alert-danger" ng-show="clientForm.street.$touched&&clientForm.street.$error.required">
+            This field is required
+        </div>
+    </div>
+    <div class="row">
+        <label for="zipcode">ZipCode</label>
+        <input type="text" id="zipcode" name="zipcode" ng-model="client.address.zipcode" required>
+        <div class="alert alert-danger" ng-show="clientForm.zipcode.$touched&&clientForm.zipcode.$error.required">
+            This field is required
+        </div>
+    </div>
+    <div class="row">
+        <button type="button">
+            <a href="#/">Back</a>
+        </button>
+        <button name="savebutton" type="submit" ng-disabled="clientForm.$invalid">Save</button>
+    </div>
+
+</form>

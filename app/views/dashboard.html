@@ -1,0 +1,41 @@
+<div ng-if="!showClients">
+    {{ errorMessage }}
+</div>
+<div class="row">
+    <div class="col-xs-3 col-xs-offset-7">
+        <p>
+            <a href="#/client/create">
+                <span class="glyphicon glyphicon-plus"> Add a client</span>
+            </a>
+        </p>
+    </div>
+</div>
+<div class="row" ng-if="showClients">
+    <h3>You have {{clients.length}} client(s) registered</h3>
+    <div ng-repeat="client in clients track by client.id">
+        <div class="media">
+            <div class="media-left">
+                <img src="./images/avatar.png" class="media-object" style="width:60px">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{ client.firstname }} {{ client.lastname }}</h4>
+                <p>
+                    <span class="glyphicon glyphicon-earphone"> {{ client.telnumber }}</span>
+                </p>
+                <div class="row">
+                    <div class="col-xs-2">
+                        <p>
+                            <a ng-href="#client/edit/{{client.id}}">
+                                <span class="glyphicon glyphicon-pencil"> Edit</span>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-xs-2">
+                        <span class="glyphicon glyphicon-trash" ng-click="deleteClient(client.id)"> Delete</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
